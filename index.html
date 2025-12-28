@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zoilo, Rosendo y la lluvia que no terminaba — Juegos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">☔</div>
+      <div>
+        <h1>Juegos de Campo Alegre</h1>
+        <p class="subtitle">Zoilo, Rosendo y la lluvia que no terminaba</p>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="Secciones">
+      <a href="#inicio">Inicio</a>
+      <a href="#sopa">Sopa</a>
+      <a href="#cruci">Crucigrama</a>
+      <a href="#trivia">Trivia</a>
+      <a href="#busca">Busca y encuentra</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="inicio" class="card hero">
+      <div>
+        <h2>Cuando la lluvia parece no terminar…</h2>
+        <p>
+          En Campo Alegre llovía, llovía y seguía lloviendo. Zoilo mantiene la calma, Rosendo protesta
+          con estilo, y Johnny trae una historia antigua sobre Noé, el arca y el arcoíris.
+        </p>
+        <p class="hint">
+          Elegí un juego arriba. Si te equivocás, no pasa nada: hasta el arcoíris necesita práctica.
+        </p>
+      </div>
+      <div class="heroBadge" aria-hidden="true">
+        <div class="badgeLine">Modo</div>
+        <div class="badgeBig">LLUVIA</div>
+        <div class="badgeLine small">sin fin (por ahora)</div>
+      </div>
+    </section>
+
+    <section id="sopa" class="card">
+      <div class="sectionHead">
+        <h2>☂️ Sopa de letras</h2>
+        <div class="actions">
+          <button class="btn" id="ws-new">Reiniciar</button>
+        </div>
+      </div>
+      <p class="muted">Buscá estas palabras (pueden estar en horizontal, vertical o diagonal):</p>
+      <div id="ws-wordlist" class="chips" aria-label="Lista de palabras"></div>
+
+      <div class="gridWrap">
+        <div id="ws-grid" class="wordsearch" aria-label="Cuadrícula de sopa de letras"></div>
+      </div>
+
+      <div class="statusRow">
+        <div class="status" id="ws-status">Seleccioná letras haciendo clic (o arrastrando) para formar una palabra.</div>
+        <div class="score" id="ws-score">0 / 0</div>
+      </div>
+    </section>
+
+    <section id="cruci" class="card">
+      <div class="sectionHead">
+        <h2>🧩 Mini-crucigrama</h2>
+        <div class="actions">
+          <button class="btn" id="cw-check">Verificar</button>
+          <button class="btn btnGhost" id="cw-reset">Reiniciar</button>
+        </div>
+      </div>
+      <p class="muted">
+        Completá las respuestas. Este crucigrama es “mini” para que Rosendo no se enoje esperando.
+      </p>
+
+      <div class="twoCol">
+        <div>
+          <h3>⬇️ Verticales</h3>
+          <ol class="clues">
+            <li><b>1.</b> Hombre bueno que construyó el arca. <span class="ans">3 letras</span></li>
+            <li><b>2.</b> Lo que apareció en el cielo como regalo de esperanza. <span class="ans">8 letras</span></li>
+          </ol>
+
+          <h3>➡️ Horizontales</h3>
+          <ol class="clues" start="3">
+            <li><b>3.</b> Tractor entusiasta que cuenta la historia. <span class="ans">6 letras</span></li>
+            <li><b>4.</b> Toro rojo “gruñón adorable”. <span class="ans">7 letras</span></li>
+          </ol>
+        </div>
+
+        <div class="cwWrap" aria-label="Crucigrama">
+          <div class="cwGrid" id="cw-grid"></div>
+          <p class="muted small" id="cw-msg"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="trivia" class="card">
+      <div class="sectionHead">
+        <h2>❓ Trivia</h2>
+        <div class="actions">
+          <button class="btn" id="tr-retry">Jugar de nuevo</button>
+        </div>
+      </div>
+
+      <div id="triviaBox" class="trivia"></div>
+      <div class="statusRow">
+        <div class="status" id="tr-status">Elegí una opción por pregunta.</div>
+        <div class="score" id="tr-score">0 / 0</div>
+      </div>
+    </section>
+
+    <section id="busca" class="card">
+      <div class="sectionHead">
+        <h2>🔎 Busca y encuentra</h2>
+        <div class="actions">
+          <button class="btn" id="bf-check">Verificar</button>
+          <button class="btn btnGhost" id="bf-reset">Reiniciar</button>
+        </div>
+      </div>
+
+      <p class="muted">
+        Son preguntas de observación y memoria de la historia. Si no te acordás, podés releer: eso también cuenta como “jugar”.
+      </p>
+
+      <div class="bf">
+        <div class="bfItem">
+          <h3>Desafío 1</h3>
+          <p>¿Cómo se llama el lugar donde pasa la historia?</p>
+          <input id="bf1" placeholder="Escribí tu respuesta..." />
+        </div>
+
+        <div class="bfItem">
+          <h3>Desafío 2</h3>
+          <p>¿Qué personaje es “tranquilo y sabio”?</p>
+          <select id="bf2">
+            <option value="">Elegir…</option>
+            <option>Zoilo</option>
+            <option>Rosendo</option>
+            <option>Johnny</option>
+            <option>Noé</option>
+          </select>
+        </div>
+
+        <div class="bfItem">
+          <h3>Desafío 3</h3>
+          <p>¿Qué construyó Noé?</p>
+          <input id="bf3" placeholder="Escribí tu respuesta..." />
+        </div>
+
+        <div class="bfItem">
+          <h3>Desafío 4</h3>
+          <p>¿Cuántos animales de cada especie subieron al arca?</p>
+          <select id="bf4">
+            <option value="">Elegir…</option>
+            <option>Uno</option>
+            <option>Dos</option>
+            <option>Tres</option>
+            <option>Muchos</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="statusRow">
+        <div class="status" id="bf-status">Completá y verificá.</div>
+        <div class="score" id="bf-score">0 / 4</div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>
+        Hecho para GitHub Pages. © Telurigrama / Guspos.Studio
+      </p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
