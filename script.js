@@ -272,7 +272,7 @@ function cwBuild(){
   setWord("NOE", 1, 4, 1, 0);
   setWord("ARCOIRIS", 0, 2, 1, 0);
   setWord("JOHNNY", 5, 1, 0, 1);
-  setWord("ROSENDO", 3, 1, 0, 1);
+  setWord("ROSENDO", 6, 1, 0, 1);
 
   const gridEl=document.getElementById("cw-grid");
   gridEl.innerHTML="";
@@ -306,7 +306,7 @@ function cwBuild(){
     {n:1, r:1, c:4},
     {n:2, r:0, c:2},
     {n:3, r:5, c:1},
-    {n:4, r:3, c:1},
+    {n:4, r:6, c:1},
   ];
   nums.forEach(({n,r,c})=>{
     const i=r*CW.size+c;
